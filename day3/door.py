@@ -51,17 +51,18 @@ else:
                 print("Use one of the following commands!!:",command_list)
         if count == 0 and command == "Open":
             open_date=datetime.now()      #datetime.now records the first time oor is opened              
-            #print("Door last open at ",open_date)       
+            print("Door last open at ",open_date)       
             print("The door is now open")
             count += 1
         elif count!= 0 and command == "Open":
-            #print("Door last open at ",open_date)
+            print("Door last open at ",open_date)
             print("The door is already open!")             #since count variable is more than zero, it means the door was already opened
         elif count!=0 and command == "Close":
             close_date=datetime.now()                      #datetime.now records last time door was closed
             print("Door last closed at ",close_date)
             print("The door is now locked")
-            count = 0                                      #reset the count to zero since door is now closed
+            count = 0     
+            door()                                 #reset the count to zero since door is now closed
         elif count == 0 and command == "Close":
             print("The door is already locked!")           #since count variable is more than  zero, it means the door was already closed
         else:
